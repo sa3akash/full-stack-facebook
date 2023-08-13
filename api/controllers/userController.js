@@ -480,8 +480,8 @@ exports.deleteRequest = async (req, res, next) => {
             const receiver = await User.findById(req.user.id)
             const sender = await User.findById(req.params.id)
             if(receiver.requests.includes(sender._id)){
-                await receiver.update({$pull: {requests: sender._id, followers: sender._id}})
-                await sender.update({$pull: {following: receiver._id}})
+                await receiver.updateOne({$pull: {requests: sender._id, followers: sender._id}})
+                await sender.updateOne({$pull: {following: receiver._id}})
 
                 res.status(200).json({message: "delete request."})
             }else{

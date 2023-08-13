@@ -76,9 +76,6 @@ exports.createComment = async (req, res, next) => {
 
     }
 
-    console.log([image])
-
-
     const response = await PostModel.findByIdAndUpdate(
       postId,
       {
