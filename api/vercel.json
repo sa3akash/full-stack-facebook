@@ -1,16 +1,15 @@
 {
-    "version":"1.1.2",
-    "name":"facebook_clone",
-    "builds":[
-        {
-            "src":"./index.js",
-            "use":"@vercel/node"
-        }
+    "version": 2,
+    "builds": [
+     {
+         "src": "./index.js",
+         "use": "@vercel/node"
+     }
     ],
-    "routes":[
-        {
-            "src":"/.*",
-            "dest":"index.js"
-        }
+    "routes": [
+     {
+         "src": "/(.*)",
+         "dest": "/"
+     }
     ]
-}
+ }
